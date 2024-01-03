@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:17:52 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/03 16:06:46 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/03 16:19:42 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,9 @@ void	swap_both(t_node **stack_a, t_node **stack_b);
 void	rotate_a(t_node **stack_a, int verbose);
 void	rotate_b(t_node **stack_b, int verbose);
 void	rotate_both(t_node **stack_a, t_node **stack_b);
+void	reverse_rotate_a(t_node **stack_a, int verbose);
+void	reverse_rotate_b(t_node **stack_b, int verbose);
+void	reverse_rotate_both(t_node **stack_a, t_node **stack_b);
 
 
 #endif

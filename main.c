@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:53:46 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/03 16:09:15 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/03 16:22:21 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,8 @@ int	main(int argc, char **argv)
 	printf("STACK B\n");
 	print_stack(&stack_b);
 
-	rotate_a(&stack_a, 1);
+	reverse_rotate_both(&stack_a, &stack_b);
 
-	rotate_b(&stack_b, 1);
-	rotate_b(&stack_b, 1);
 
 	printf("STACK A\n");
 	print_stack(&stack_a);
