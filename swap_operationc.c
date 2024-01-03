@@ -6,13 +6,13 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:18:57 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/03 15:22:32 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:33:59 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-void	swap_a(t_node **stack_a)
+void	swap_a(t_node **stack_a, int verbose)
 {
 	t_node *head;
 	t_node *temp_node;
@@ -28,10 +28,11 @@ void	swap_a(t_node **stack_a)
 	*stack_a = temp_node;
 	head->curr_pos = 1;
 	temp_node->curr_pos = 0;
-	ft_putstr_fd("sa\n", 1);
+	if (verbose)
+		ft_putstr_fd("sa\n", 1);
 }
 
-void	swap_b(t_node **stack_b)
+void	swap_b(t_node **stack_b, int verbose)
 {
 	t_node *head;
 	t_node *temp_node;
@@ -47,5 +48,13 @@ void	swap_b(t_node **stack_b)
 	*stack_b = temp_node;
 	head->curr_pos = 1;
 	temp_node->curr_pos = 0;
-	ft_putstr_fd("sb\n", 1);
+	if (verbose)
+		ft_putstr_fd("sb\n", 1);
+}
+
+void	swap_both(t_node **stack_a, t_node **stack_b)
+{
+	swap_a(stack_a, 0);
+	swap_b(stack_b, 0);
+	ft_putstr_fd("ss\n", 1);
 }

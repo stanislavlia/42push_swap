@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:17:52 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/03 15:22:49 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/03 16:06:46 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,18 @@ char	**ft_split(char const *s, char c);
 void	ft_putstr_fd(char *s, int fd);
 
 //Linkedlist utils
+t_node *find_last_node(t_node **head);
 t_node	*init_stack(char **args);
 
 //Stack operations
 void	push_a(t_node **stack_a, t_node **stack_b);
 void	push_b(t_node **stack_a, t_node **stack_b);
-void	swap_a(t_node **stack_a);
-void	swap_b(t_node **stack_a);
+void	swap_a(t_node **stack_a, int verbose);
+void	swap_b(t_node **stack_b, int verbose);
+void	swap_both(t_node **stack_a, t_node **stack_b);
+void	rotate_a(t_node **stack_a, int verbose);
+void	rotate_b(t_node **stack_b, int verbose);
+void	rotate_both(t_node **stack_a, t_node **stack_b);
 
 
 #endif
