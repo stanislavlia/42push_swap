@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:17:52 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/03 16:19:42 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/03 17:05:13 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 #include <stdio.h>
 #include <limits.h>
 
+#define TRUE 1
+#define FALSE 0
+
 typedef struct node
 {
 	int	curr_pos;
@@ -27,6 +30,7 @@ typedef struct node
 	struct node *prev;
 	int	cost;
 	int	is_cheapest;
+	int	above_mid;
 }			t_node;
 
 typedef struct push_swap
@@ -44,6 +48,8 @@ void	ft_putstr_fd(char *s, int fd);
 //Linkedlist utils
 t_node *find_last_node(t_node **head);
 t_node	*init_stack(char **args);
+int		get_stack_size(t_node **head);
+void	update_pos(t_node **stack);
 
 //Stack operations
 void	push_a(t_node **stack_a, t_node **stack_b);
@@ -57,6 +63,7 @@ void	rotate_both(t_node **stack_a, t_node **stack_b);
 void	reverse_rotate_a(t_node **stack_a, int verbose);
 void	reverse_rotate_b(t_node **stack_b, int verbose);
 void	reverse_rotate_both(t_node **stack_a, t_node **stack_b);
+void	sort_3els(t_node **head);
 
 
 #endif

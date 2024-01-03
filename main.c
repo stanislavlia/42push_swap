@@ -6,11 +6,28 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:53:46 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/03 16:22:21 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/03 17:05:42 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
+
+void free_stack(t_node **head)
+{
+	t_node *current_node;
+	t_node *next_node;
+
+	if (head == NULL || *head == NULL)
+		return;
+	current_node = *head;
+	while (current_node != NULL)
+	{
+		next_node = current_node->next;
+		free(current_node);
+		current_node = next_node;
+	}
+	*head = NULL;
+}
 
 void	print_stack(t_node **head)
 {	
@@ -19,7 +36,7 @@ void	print_stack(t_node **head)
 	stack = *head;
 	while (stack != NULL)
 	{
-		printf(" [ %d ]; pos = %d; \n", stack->val, stack->curr_pos);
+		printf(" [ %d ]; pos = %d; above mid? %d \n", stack->val, stack->curr_pos, stack->above_mid);
 		stack = stack->next;
 	}
 }
@@ -37,22 +54,19 @@ int	main(int argc, char **argv)
 	
 	stack_a = init_stack(argv + 1);
 
-
-	push_b(&stack_a, &stack_b);
-	push_b(&stack_a, &stack_b);
-	push_b(&stack_a, &stack_b);
-
 	printf("STACK A\n");
 	print_stack(&stack_a);
 	printf("STACK B\n");
 	print_stack(&stack_b);
 
-	reverse_rotate_both(&stack_a, &stack_b);
-
+	sort_3els(&stack_a);
 
 	printf("STACK A\n");
 	print_stack(&stack_a);
 	printf("STACK B\n");
 	print_stack(&stack_b);
 	
+	free_stack(&stack_a);
+	free_stack(&stack_b);
+	return (EXIT_FAILURE);
 }

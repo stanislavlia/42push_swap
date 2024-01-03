@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:48:59 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/03 14:58:04 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/03 16:52:31 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,21 @@ t_node	*init_stack(char **args)
 			append_node(&head, i, ft_atoi(args[i]));
 		i++;
 	}
+	update_pos(&head);
 	return (head);
+}
+
+int	get_stack_size(t_node **head)
+{
+	int			i;
+	t_node	*curr_node;
+
+	curr_node = (*head);
+	i = 0;
+	while (curr_node != NULL)
+	{
+		i++;
+		curr_node = curr_node->next;
+	}
+	return (i);
 }
