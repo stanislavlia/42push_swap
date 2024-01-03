@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:33:01 by sliashko          #+#    #+#             */
-/*   Updated: 2023/12/19 13:17:21 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:10:16 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,21 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (res * neg);
+}
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }
