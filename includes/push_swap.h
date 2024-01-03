@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:17:52 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/03 18:00:07 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/03 18:15:36 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,7 @@ void	sort_3els(t_node **head);
 void	sort_4els(t_node **stack_a, t_node **stack_b);
 void	sort_5els(t_node **stack_a, t_node **stack_b);
 void	sort_small(t_node **stack_a, t_node **stack_b);
-int		find_max_val(t_node **head);
-int		find_min_val(t_node **head);
-
+t_node	*find_max_node(t_node **head);
+t_node	*find_min_node(t_node **head);
 
 #endif
