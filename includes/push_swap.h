@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:17:52 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/03 17:05:13 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/03 18:00:07 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,14 @@ void	rotate_both(t_node **stack_a, t_node **stack_b);
 void	reverse_rotate_a(t_node **stack_a, int verbose);
 void	reverse_rotate_b(t_node **stack_b, int verbose);
 void	reverse_rotate_both(t_node **stack_a, t_node **stack_b);
+
+//Sorting
 void	sort_3els(t_node **head);
+void	sort_4els(t_node **stack_a, t_node **stack_b);
+void	sort_5els(t_node **stack_a, t_node **stack_b);
+void	sort_small(t_node **stack_a, t_node **stack_b);
+int		find_max_val(t_node **head);
+int		find_min_val(t_node **head);
 
 
 #endif

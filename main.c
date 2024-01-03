@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:53:46 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/03 17:05:42 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/03 18:00:14 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,14 @@ int	main(int argc, char **argv)
 	printf("STACK B\n");
 	print_stack(&stack_b);
 
-	sort_3els(&stack_a);
+	sort_small(&stack_a, &stack_b);
 
 	printf("STACK A\n");
 	print_stack(&stack_a);
 	printf("STACK B\n");
 	print_stack(&stack_b);
+	
+	printf("MAx = %d; min = %d\n", find_max_val(&stack_a), find_min_val(&stack_a));
 	
 	free_stack(&stack_a);
 	free_stack(&stack_b);
