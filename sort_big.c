@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 11:34:00 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/04 14:18:12 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/04 14:48:51 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ void	general_sort(t_node **stack_a, t_node **stack_b)
 	sort_small(stack_a, stack_b);
 	printf("Sort small done\n");
 	while (get_stack_size(stack_b) > 0)
-	{
+	{	
+		printf("Moving cheapest to b\n");
 		update_stacks(stack_a, stack_b);
 		move_cheap_node(stack_a, stack_b);
 	}

@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:40:54 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/04 12:58:49 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/04 15:01:44 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	find_target_node(t_node **stack, t_node *node)
 	curr = *stack;
 	if (node->val > find_max_node(stack)->val)
 	{
-		node->target = curr;
+		node->target = find_min_node(stack);
 		return ;
 	}
 	target_candidate = find_max_node(stack);
