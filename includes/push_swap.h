@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:17:52 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/04 13:05:50 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/04 13:36:08 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,10 @@ void	set_targets(t_node **stack_a, t_node **stack_b);
 void	set_costs(t_node **stack_a, t_node **stack_b);
 void	set_cheapest(t_node **stack);
 void	update_stacks(t_node **stack_a, t_node **stack_b);
+t_node	*get_cheapest(t_node **stack);
+void	rotate_both_till(t_node **stack_a, t_node **stack_b,
+										t_node *cheapest_node);
+void	rev_rotate_both_till(t_node **stack_a, t_node **stack_b,
+										t_node *cheapest_node);
 
 #endif

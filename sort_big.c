@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 11:34:00 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/04 13:05:09 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/04 13:30:45 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,20 @@ void	update_stacks(t_node **stack_a, t_node **stack_b)
 	set_targets(stack_a, stack_b);
 	set_costs(stack_a, stack_b);
 	set_cheapest(stack_b);
+}
+
+t_node	*get_cheapest(t_node **stack)
+{	
+	t_node	*curr;
+	t_node *cheapest;
+	
+	cheapest = NULL;
+	curr = *stack;
+	while (curr != NULL)
+	{
+		if (curr->is_cheapest)
+			cheapest = curr;
+		curr = curr->next;
+	}
+	return (cheapest);
 }

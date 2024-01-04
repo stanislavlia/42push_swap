@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:13:30 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/03 18:14:41 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/04 13:35:57 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,3 +44,28 @@ t_node	*find_min_node(t_node **head)
 	return (min_node);
 }
 
+//This func will rotate both stack
+//unless either target node of cheapest is on top in A
+//or cheapest itself is on top of B
+void	rotate_both_till(t_node **stack_a, t_node **stack_b,
+										t_node *cheapest_node)
+{
+	while (*stack_a != cheapest_node->target
+			&& *stack_b != cheapest_node)
+		rotate_both(stack_a, stack_b);
+	update_pos(stack_a);
+	update_pos(stack_b);
+}
+
+//This func will reverse rotate both stack
+//unless either target node of cheapest is on top in A
+//or cheapest itself is on top of B
+void	rev_rotate_both_till(t_node **stack_a, t_node **stack_b,
+										t_node *cheapest_node)
+{
+	while (*stack_a != cheapest_node->target
+			&& *stack_b != cheapest_node)
+		reverse_rotate_both(stack_a, stack_b);
+	update_pos(stack_a);
+	update_pos(stack_b);
+}
