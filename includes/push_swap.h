@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:17:52 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/03 18:15:36 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/04 11:58:48 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct node
 	int	val;
 	struct node *next;
 	struct node *prev;
+	struct node *target;
 	int	cost;
 	int	is_cheapest;
 	int	above_mid;
@@ -71,5 +72,6 @@ void	sort_5els(t_node **stack_a, t_node **stack_b);
 void	sort_small(t_node **stack_a, t_node **stack_b);
 t_node	*find_max_node(t_node **head);
 t_node	*find_min_node(t_node **head);
+void	find_target_node(t_node **stack, t_node *node);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:53:46 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/03 18:57:56 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/04 12:02:24 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,15 @@ void	print_stack(t_node **head)
 	}
 }
 
+/* TODO
+
+	1) Implement function to set target node (for els in B)
+	2) Implement function to compute cost of each el in B
+	3) Implement function to rotate untill we have target on top +
+	   function to move from B to A and keep A sorted
+*/
+
+
 int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
@@ -59,7 +68,17 @@ int	main(int argc, char **argv)
 	printf("STACK B\n");
 	print_stack(&stack_b);
 
-	sort_small(&stack_a, &stack_b);	
+	push_b(&stack_a, &stack_b);
+	push_b(&stack_a, &stack_b);
+	push_b(&stack_a, &stack_b);
+	
+	find_target_node(&stack_a, stack_b);
+	find_target_node(&stack_a, stack_b->next);
+	find_target_node(&stack_a, stack_b->next->next);
+	printf("target node value = %d\n", stack_b->target->val);
+	printf("target node value = %d\n", stack_b->next->target->val);
+	printf("target node value = %d\n", stack_b->next->next->target->val);
+	
 	printf("STACK A\n");
 	print_stack(&stack_a);
 	printf("STACK B\n");
