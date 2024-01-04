@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:53:46 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/04 14:15:43 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/04 15:05:22 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	print_stack(t_node **head)
 	   function to move from B to A and keep A sorted
 */
 
-
+//DONT forget to check for sorted or not
 int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
@@ -63,20 +63,8 @@ int	main(int argc, char **argv)
 	
 	stack_a = init_stack(argv + 1);
 
-	printf("STACK A\n");
-	print_stack(&stack_a);
-	printf("STACK B\n");
-	print_stack(&stack_b);
-
-	
 	general_sort(&stack_a, &stack_b);
 	
-
-	printf("STACK A\n");
-	print_stack(&stack_a);
-	printf("STACK B\n");
-	print_stack(&stack_b);
-
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (EXIT_FAILURE);
