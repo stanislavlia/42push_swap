@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:17:52 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/04 16:51:32 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/04 17:32:19 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,6 @@ void	general_sort(t_node **stack_a, t_node **stack_b);
 
 void	print_stack(t_node **head);
 void	print_stack_backward(t_node **head);
+void	free_stack(t_node **head);
 
 #endif

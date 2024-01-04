@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 11:34:00 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/04 16:52:55 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/04 18:04:13 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,41 +73,18 @@ void	general_sort(t_node **stack_a, t_node **stack_b)
 		push_b(stack_a, stack_b);
 	sort_small(stack_a, stack_b);
 	printf("Moving nodes back to A\n");
-	// while (get_stack_size(stack_b) > 0)
-	// while(get_stack_size(stack_b))
-	// {	
-	// 	update_stacks(stack_a, stack_b);
-	// 	move_cheap_node(stack_a, stack_b);
-	// }
-	printf("------A---\n");
-	print_stack(stack_a);
-	printf("------B---\n");
-	print_stack(stack_b);
-	
-	update_stacks(stack_a, stack_b);
-	move_cheap_node(stack_a, stack_b);
-	update_stacks(stack_a, stack_b);
-	printf("------A---\n");
-	print_stack(stack_a);
-	printf("------B---\n");
-	print_stack(stack_b);
-
-	printf("A BACKWARDS\n");
-	print_stack_backward(stack_a);
-	printf(" cheapest in B = %d; target = %d\n", get_cheapest(stack_b)->val, get_cheapest(stack_b)->target->val);
-	reverse_rotate_a(stack_a, TRUE);//! PROBLEM HERE; Number just disappears
-	printf("------A---\n");
-	print_stack(stack_a);
-	printf("------B---\n");
-	print_stack(stack_b);
-	
-
-	// update_pos(stack_a);
-	// min_node_a = find_min_node(stack_a);
-	// if (min_node_a->above_mid)
-	// 	while (*stack_a != min_node_a)
-	// 		rotate_a(stack_a, TRUE);
-	// else
-	// 	while (*stack_a != min_node_a)
-	// 		reverse_rotate_a(stack_a, TRUE);
+	while (get_stack_size(stack_b) > 0)
+	while(get_stack_size(stack_b))
+	{	
+		update_stacks(stack_a, stack_b);
+		move_cheap_node(stack_a, stack_b);
+	}
+	update_pos(stack_a);
+	min_node_a = find_min_node(stack_a);
+	if (min_node_a->above_mid)
+		while (*stack_a != min_node_a)
+			rotate_a(stack_a, TRUE);
+	else
+		while (*stack_a != min_node_a)
+			reverse_rotate_a(stack_a, TRUE);
 }

@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:53:46 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/04 16:54:17 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/04 17:29:25 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,24 +67,24 @@ void	print_stack_backward(t_node **head)
 	   function to move from B to A and keep A sorted
 */
 
-//DONT forget to check for sorted or not
-int	main(int argc, char **argv)
-{
-	t_node	*stack_a;
-	t_node	*stack_b;
+// //DONT forget to check for sorted or not
+// int	main(int argc, char **argv)
+// {
+// 	t_node	*stack_a;
+// 	t_node	*stack_b;
 
-	if (argc < 2)
-	{
-		printf("Too few args\n");
-		return (EXIT_FAILURE);
-	}
+// 	if (argc < 2)
+// 	{
+// 		printf("Too few args\n");
+// 		return (EXIT_FAILURE);
+// 	}
 	
-	stack_a = init_stack(argv + 1);
-	stack_b = NULL;
+// 	stack_a = init_stack(argv + 1);
+// 	stack_b = NULL;
 	
-	general_sort(&stack_a, &stack_b);
+// 	general_sort(&stack_a, &stack_b);
 	
-	free_stack(&stack_a);
-	free_stack(&stack_b);
-	return (EXIT_FAILURE);
-}
+// 	free_stack(&stack_a);
+// 	free_stack(&stack_b);
+// 	return (EXIT_FAILURE);
+// }
