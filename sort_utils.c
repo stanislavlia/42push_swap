@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:13:30 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/04 13:35:57 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/04 13:53:48 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,28 @@ void	rev_rotate_both_till(t_node **stack_a, t_node **stack_b,
 		reverse_rotate_both(stack_a, stack_b);
 	update_pos(stack_a);
 	update_pos(stack_b);
+}
+
+//This function will finish lifting up target node if given A
+// or cheapest node if given B
+void	complete_rotation(t_node **stack, t_node *top_node, char stack_name)
+{
+	while (*stack != top_node)
+	{
+		if (stack_name == 'A')
+		{
+			if (top_node->above_mid)
+				rotate_a(stack, TRUE);
+			else
+				reverse_rotate_a(stack, TRUE);
+		}
+		if (stack_name == 'B')
+		{
+			if (top_node->above_mid)
+				rotate_b(stack, TRUE);
+			else
+				reverse_rotate_b(stack, TRUE);
+		}
+	}
+	
 }

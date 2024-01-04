@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:53:46 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/04 13:08:08 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/04 14:15:43 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,8 @@ int	main(int argc, char **argv)
 	printf("STACK B\n");
 	print_stack(&stack_b);
 
-	push_b(&stack_a, &stack_b);
-	push_b(&stack_a, &stack_b);
-	push_b(&stack_a, &stack_b);
 	
-	sort_small(&stack_a, &stack_b);
-	update_stacks(&stack_a, &stack_b);
+	general_sort(&stack_a, &stack_b);
 	
 
 	printf("STACK A\n");

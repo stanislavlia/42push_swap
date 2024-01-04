@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:17:52 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/04 13:36:08 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/04 14:13:50 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,7 @@ void	rotate_both_till(t_node **stack_a, t_node **stack_b,
 										t_node *cheapest_node);
 void	rev_rotate_both_till(t_node **stack_a, t_node **stack_b,
 										t_node *cheapest_node);
+void	complete_rotation(t_node **stack, t_node *top_node, char stack_name);
+void	general_sort(t_node **stack_a, t_node **stack_b);
 
 #endif
