@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:53:46 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/04 15:05:22 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/04 16:54:17 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,24 @@ void	print_stack(t_node **head)
 	}
 }
 
+void	print_stack_backward(t_node **head)
+{	
+	t_node *stack;
+	
+	stack = *head;
+	while (stack != NULL)
+	{
+		stack = stack->next;
+	}
+	stack = find_last_node(head);
+	while (stack != NULL)
+	{
+		printf(" [ %d ]; pos = %d;\n", stack->val, stack->curr_pos);
+		stack = stack->prev;
+	}
+	
+}
+
 /* TODO
 
 	1) Implement function to set target node (for els in B)
@@ -62,7 +80,8 @@ int	main(int argc, char **argv)
 	}
 	
 	stack_a = init_stack(argv + 1);
-
+	stack_b = NULL;
+	
 	general_sort(&stack_a, &stack_b);
 	
 	free_stack(&stack_a);

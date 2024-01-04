@@ -6,11 +6,14 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:06:31 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/03 15:15:04 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/04 16:56:51 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+//PROBLEM HERE IN PUSHING OPERATIONS
+// it doesn't change previous reference correctly
+
 
 void	push_a(t_node **stack_a, t_node **stack_b)
 {
@@ -20,12 +23,13 @@ void	push_a(t_node **stack_a, t_node **stack_b)
 		return ;
 	ft_putstr_fd("pa\n", 1);
 	temp_node = *stack_b;
+	temp_node->prev = NULL;
 	*stack_b = (*stack_b)->next;
 	if (temp_node ->next != NULL)
 		temp_node->next->prev = NULL; 
-	temp_node->next = *stack_a;
 	if (*stack_a != NULL)
 		temp_node->next->prev = temp_node;
+	temp_node->next = *stack_a;
 	*stack_a = temp_node;
 	(*stack_a)->prev = NULL;
 }
