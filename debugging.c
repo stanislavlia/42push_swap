@@ -61,6 +61,7 @@
 // }
 
 
+// ./push_swap 5 7 6 1 4 10 3 2 9 8 - SOLVED
 int	main(int argc, char **argv)
 {
 	t_node	*stack_a;

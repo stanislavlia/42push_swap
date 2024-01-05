@@ -6,11 +6,12 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:13:30 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/04 16:25:56 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:40:02 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 t_node	*find_max_node(t_node **head)
 {
@@ -73,31 +74,81 @@ void	rev_rotate_both_till(t_node **stack_a, t_node **stack_b,
 //This function will finish lifting up target node if given A
 // or cheapest node if given B
 
-//BUG IS HERE
-void	complete_rotation(t_node **stack, t_node *top_node, char stack_name)
-{	
-	
-	while ((*stack)->val != top_node->val)
+int	is_in_stack(t_node **stack, t_node *top_node)
+{
+	t_node	*curr;
+
+	curr = *stack;
+	while (curr)
 	{
-		printf("------\n");
-		print_stack(stack);
-		printf("------\n");
-		printf("complete rotation\n");
-		printf("Top node val = %d\n; curr_top = %d\n ", top_node->val, (*stack)->val);
-		if (stack_name == 'A')
-		{
-			if (top_node->above_mid)
-				rotate_a(stack, TRUE);
-			else
-				reverse_rotate_a(stack, TRUE);
-		}
-		else if (stack_name == 'B')
-		{
-			if (top_node->above_mid)
-				rotate_b(stack, TRUE);
-			else
-				reverse_rotate_b(stack, TRUE);
-		}
+		if (curr->val == top_node->val)
+			return (TRUE);
+		curr = curr->next;
 	}
+	return (FALSE);
+}
+
+void	complete_rotation(t_node **stack_a, t_node **stack_b)
+{
+	t_node	*lift_a;
+	t_node	*lift_b;
+
+	update_stacks(stack_a, stack_b);
+	lift_b = get_cheapest(stack_b);
+	lift_a = lift_b->target;
+	printf("Cheapest in B = %d\n", lift_b->val);
+	printf("Its target = %d\n", lift_a->val);
+	printf("STACK_A\n");
+	print_stack(stack_a);
+	printf("STACK_B\n");
+	print_stack(stack_b);
+	while ((*stack_a)->val != lift_a->val)
+	{
+	// 	if (lift_a->above_mid)
+	// 		rotate_a(stack_a, TRUE);
+	// 	else
+	// 		reverse_rotate_a(stack_a, TRUE);
+		rotate_a(stack_a, TRUE);
+	}
+	printf("DONE WITH A\n");
+	while ((*stack_b)->val != lift_b->val)
+	{
+		// if (lift_b->above_mid)
+		// 	rotate_b(stack_b, TRUE);
+		// else
+		// 	reverse_rotate_b(stack_b, TRUE);
+		rotate_b(stack_b, TRUE);
+	}
+	printf("DONE WITH B\n");
 	
 }
+
+
+//BUG IS HERE
+// void	complete_rotation(t_node **stack, t_node *top_node, char stack_name)
+// {	
+	
+// 	while ((*stack)->val != top_node->val)
+// 	{
+		
+// 		if (stack_name == 'A')
+// 		{
+// 			printf("IS elemnt %d found in stack? = %d\n", top_node->val ,is_in_stack(stack, top_node));
+// 			print_stack(stack);
+// 			printf("Backward\n");
+// 			print_stack_backward(stack);
+// 			if (top_node->above_mid)
+// 				rotate_a(stack, TRUE);
+// 			else
+// 				reverse_rotate_a(stack, TRUE);
+// 		}
+// 		else if (stack_name == 'B')
+// 		{
+// 			if (top_node->above_mid)
+// 				rotate_b(stack, TRUE);
+// 			else
+// 				reverse_rotate_b(stack, TRUE);
+// 		}
+// 	}
+	
+// }

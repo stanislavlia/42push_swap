@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 11:34:00 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/04 18:04:13 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:38:05 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,23 @@ t_node	*get_cheapest(t_node **stack)
 	return (cheapest);
 }
 
+// void	move_cheap_node(t_node **stack_a, t_node **stack_b)
+// {
+// 	t_node	*cheapest;
+
+// 	cheapest = get_cheapest(stack_b);
+// 	if (cheapest->above_mid && cheapest->target->above_mid)
+// 		rotate_both_till(stack_a, stack_b, cheapest);
+// 	if (!(cheapest->above_mid) && !(cheapest->target->above_mid))
+// 		rev_rotate_both_till(stack_a, stack_b, cheapest);
+// 	complete_rotation(stack_b, cheapest, 'B');
+// 	print_stack(stack_b);
+// 	printf("Cheapest in B: %d; its target = %d\n", cheapest->val, cheapest->target->val);
+	
+// 	complete_rotation(stack_a, cheapest->target, 'A');
+// 	push_a(stack_a, stack_b);
+// }
+
 void	move_cheap_node(t_node **stack_a, t_node **stack_b)
 {
 	t_node	*cheapest;
@@ -47,12 +64,7 @@ void	move_cheap_node(t_node **stack_a, t_node **stack_b)
 		rotate_both_till(stack_a, stack_b, cheapest);
 	if (!(cheapest->above_mid) && !(cheapest->target->above_mid))
 		rev_rotate_both_till(stack_a, stack_b, cheapest);
-	
-	complete_rotation(stack_b, cheapest, 'B');
-	print_stack(stack_b);
-	printf("Cheapest in B: %d; its target = %d\n", cheapest->val, cheapest->target->val);
-	
-	complete_rotation(stack_a, cheapest->target, 'A');
+	complete_rotation(stack_a, stack_b);
 	push_a(stack_a, stack_b);
 }
 
