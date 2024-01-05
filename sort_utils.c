@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:13:30 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/05 15:40:02 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:42:57 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,12 +96,6 @@ void	complete_rotation(t_node **stack_a, t_node **stack_b)
 	update_stacks(stack_a, stack_b);
 	lift_b = get_cheapest(stack_b);
 	lift_a = lift_b->target;
-	printf("Cheapest in B = %d\n", lift_b->val);
-	printf("Its target = %d\n", lift_a->val);
-	printf("STACK_A\n");
-	print_stack(stack_a);
-	printf("STACK_B\n");
-	print_stack(stack_b);
 	while ((*stack_a)->val != lift_a->val)
 	{
 	// 	if (lift_a->above_mid)
@@ -110,7 +104,6 @@ void	complete_rotation(t_node **stack_a, t_node **stack_b)
 	// 		reverse_rotate_a(stack_a, TRUE);
 		rotate_a(stack_a, TRUE);
 	}
-	printf("DONE WITH A\n");
 	while ((*stack_b)->val != lift_b->val)
 	{
 		// if (lift_b->above_mid)
@@ -118,9 +111,7 @@ void	complete_rotation(t_node **stack_a, t_node **stack_b)
 		// else
 		// 	reverse_rotate_b(stack_b, TRUE);
 		rotate_b(stack_b, TRUE);
-	}
-	printf("DONE WITH B\n");
-	
+	}	
 }
 
 

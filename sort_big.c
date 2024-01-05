@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 11:34:00 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/05 15:38:05 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:49:47 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,9 @@ void	general_sort(t_node **stack_a, t_node **stack_b)
 		sort_small(stack_a, stack_b);
 		return ;
 	}
-	printf("Pushing to B\n");
 	while (get_stack_size(stack_a) > 3)
 		push_b(stack_a, stack_b);
 	sort_small(stack_a, stack_b);
-	printf("Moving nodes back to A\n");
 	while (get_stack_size(stack_b) > 0)
 	while(get_stack_size(stack_b))
 	{	
@@ -93,6 +91,8 @@ void	general_sort(t_node **stack_a, t_node **stack_b)
 	}
 	update_pos(stack_a);
 	min_node_a = find_min_node(stack_a);
+	// while (*stack_a != min_node_a)
+	// 	rotate_a(stack_a, TRUE);
 	if (min_node_a->above_mid)
 		while (*stack_a != min_node_a)
 			rotate_a(stack_a, TRUE);
