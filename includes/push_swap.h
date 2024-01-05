@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:17:52 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/05 15:30:24 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:27:29 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ t_node *find_last_node(t_node **head);
 t_node	*init_stack(char **args);
 int		get_stack_size(t_node **head);
 void	update_pos(t_node **stack);
+int		is_sorted(t_node **stack);
 
 //Stack operations
 void	push_a(t_node **stack_a, t_node **stack_b);

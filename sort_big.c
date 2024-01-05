@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 11:34:00 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/05 15:59:21 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:38:35 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,11 @@ void	move_cheap_node(t_node **stack_a, t_node **stack_b)
 	t_node	*cheapest;
 
 	cheapest = get_cheapest(stack_b);
-	if (cheapest->above_mid && cheapest->target->above_mid)
-		rotate_both_till(stack_a, stack_b, cheapest);
-	if (!(cheapest->above_mid) && !(cheapest->target->above_mid))
-		rev_rotate_both_till(stack_a, stack_b, cheapest);
+	// if (cheapest->above_mid && cheapest->target->above_mid)
+	// 	rotate_both_till(stack_a, stack_b, cheapest);
+	// if (!(cheapest->above_mid) && !(cheapest->target->above_mid))
+	// 	rev_rotate_both_till(stack_a, stack_b, cheapest);
+	rotate_both_till(stack_a, stack_b, cheapest);
 	complete_rotation(stack_a, stack_b);
 	push_a(stack_a, stack_b);
 }
@@ -98,4 +99,18 @@ void	general_sort(t_node **stack_a, t_node **stack_b)
 	else
 		while (*stack_a != min_node_a)
 			reverse_rotate_a(stack_a, TRUE);
+}
+
+int	is_sorted(t_node **stack)
+{
+	t_node	*node;
+
+	node = *stack;
+	while (node->next)
+	{
+		if (node->val > node->next->val)
+			return (FALSE);
+		node = node->next;
+	}
+	return (TRUE);
 }
