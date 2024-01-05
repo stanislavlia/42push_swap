@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 11:34:00 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/05 15:49:47 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:59:21 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ void	general_sort(t_node **stack_a, t_node **stack_b)
 	while (get_stack_size(stack_a) > 3)
 		push_b(stack_a, stack_b);
 	sort_small(stack_a, stack_b);
-	while (get_stack_size(stack_b) > 0)
 	while(get_stack_size(stack_b))
 	{	
 		update_stacks(stack_a, stack_b);
