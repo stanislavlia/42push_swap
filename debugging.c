@@ -4,7 +4,7 @@
 // 1) Try to comment my small algorithm and try to catch problem using big algorithm
 // 2) Try Xcode to debug and catch problem
 
-// ./push_swap 5 7 6 1 4 10 3 2 9 8 - SOLVED
+//./push_swap 4 5 1 3 2 - Element 2 just disappears 
 int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	}
 	general_sort(&stack_a, &stack_b);
 
-	//print_stack(&stack_a);
+	print_stack(&stack_a);
 	
 	free_stack(&stack_a);
 	free_stack(&stack_b);

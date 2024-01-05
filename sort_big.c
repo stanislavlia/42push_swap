@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 11:34:00 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/05 17:38:35 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/05 18:54:51 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,11 @@ void	general_sort(t_node **stack_a, t_node **stack_b)
 	int		size_a;
 	
 	size_a = get_stack_size(stack_a);
-	if (size_a <= 5)
-	{
-		sort_small(stack_a, stack_b);
-		return ;
-	}
+	// if (size_a <= 5)
+	// {
+	// 	sort_small(stack_a, stack_b);
+	// 	return ;
+	// }
 	while (get_stack_size(stack_a) > 3)
 		push_b(stack_a, stack_b);
 	sort_small(stack_a, stack_b);

@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:12:48 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/05 16:18:28 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/05 19:12:05 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	reverse_rotate_a(t_node **stack_a, int verbose)
 	last->prev = NULL;
 	*stack_a = last;
 	last->next->prev = last;
+	print_stack(stack_a);
 	if (verbose)
 		ft_putstr_fd("rra\n", 1);
 }

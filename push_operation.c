@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:06:31 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/05 15:44:02 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/05 19:15:08 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,9 @@ void	push_a(t_node **stack_a, t_node **stack_b)
 		(*stack_a)->prev = temp_node;
 	temp_node->next = *stack_a;
 	*stack_a = temp_node;
+	
 	ft_putstr_fd("pa\n", 1);
+	print_stack(stack_a); //problem here
 }
 
 void	push_b(t_node **stack_a, t_node **stack_b)
