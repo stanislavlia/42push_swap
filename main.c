@@ -17,6 +17,18 @@ void free_stack(t_node **head)
 	*head = NULL;
 }
 
+void	free_matrix(char **argv)
+{
+	int	i;
+
+	i = -1;
+	if (NULL == argv || NULL == *argv)
+		return ;
+	while (argv[i])
+		free(argv[i++]);
+	//free(argv - 1);
+}
+
 void	print_stack(t_node **head)
 {	
 	t_node *stack;
@@ -46,26 +58,24 @@ void	print_stack_backward(t_node **head)
 	}
 	
 }
-//TODO
-// 1) Try to comment my small algorithm and try to catch problem using big algorithm
-// 2) Try Xcode to debug and catch problem
 
-//DONT FORGET TO TURN ON THE FLAGS!!!
-//./push_swap 4 5 1 3 2 - Element 2 just disappears 
+//ADD case ./push_swap "1 -3 4 5 9"
 int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
 	t_node	*stack_b;
-
+	
 	if (argc < 2)
+		exit_with_err(NULL);
+	if (argc == 2)
 	{
-		printf("Too few args\n");
-		return (EXIT_FAILURE);
+		if (is_space_inside(argv[1]))
+			stack_a = init_stack_qts(argv[1]);
+		else
+			return (EXIT_SUCCESS);
 	}
-	stack_a = init_stack(argv + 1);
-
-	
-	
+	else
+		stack_a = init_stack(argv + 1);
 	stack_b = NULL;
 	if (is_sorted(&stack_a))
 	{

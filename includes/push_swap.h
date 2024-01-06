@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:17:52 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/06 13:49:28 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/06 14:19:12 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	ft_putstr_fd(char *s, int fd);
 //Linkedlist utils
 t_node *find_last_node(t_node **head);
 t_node	*init_stack(char **args);
+t_node	*init_stack_qts(char *args);
 int		get_stack_size(t_node **head);
 void	update_pos(t_node **stack);
 int		is_sorted(t_node **stack);
@@ -96,5 +97,7 @@ void	exit_with_err(t_node **stack);
 int		is_space_inside(char *str);
 void	check_spaces(char **argv, t_node **head);
 void	check_dups(t_node **stack);
+void	free_matrix(char **argv);
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:48:59 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/06 13:49:46 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/06 14:34:05 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ t_node	*init_stack(char **args)
 
 	head = NULL;
 	i = 0;
+
 	check_spaces(args, &head);
 	while (args[i] != NULL)
 	{
@@ -80,6 +81,32 @@ t_node	*init_stack(char **args)
 	update_pos(&head);
 	return (head);
 }
+
+//Init stack when we have all arguments in quotes "4 3 2 -5"
+t_node	*init_stack_qts(char *args)
+{
+	t_node		*head;
+	int			i;
+	char		**spl_args;
+	
+
+	spl_args = ft_split(args, ' ');
+	head = NULL;
+	i = 0;
+	while (spl_args[i] != NULL)
+	{
+		if (i == 0)
+			head = create_new_node(i, ft_atoi_protected(spl_args[i], &head));
+		else
+			append_node(&head, i, ft_atoi_protected(spl_args[i], &head));
+		i++;
+	}
+	free_matrix(spl_args);
+	check_dups(&head);
+	update_pos(&head);
+	return (head);
+}
+
 
 int	get_stack_size(t_node **head)
 {
@@ -95,3 +122,4 @@ int	get_stack_size(t_node **head)
 	}
 	return (i);
 }
+
