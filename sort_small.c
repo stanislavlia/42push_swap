@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:59:04 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/03 18:58:24 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/06 17:30:53 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	sort_2els(t_node **head)
 void	sort_3els(t_node **head)
 {
 	int	vals[3];
+
 	vals[0] = (*head)->val;
 	vals[1] = (*head)->next->val;
 	vals[2] = (*head)->next->next->val;
@@ -52,6 +53,7 @@ void	sort_3els(t_node **head)
 void	sort_4els(t_node **stack_a, t_node **stack_b)
 {
 	int	min_val;
+
 	min_val = find_min_node(stack_a)->val;
 	if ((*stack_a)->next->val == min_val)
 		swap_a(stack_a, TRUE);
@@ -62,8 +64,6 @@ void	sort_4els(t_node **stack_a, t_node **stack_b)
 	}
 	if ((*stack_a)->next->next->next->val == min_val)
 		reverse_rotate_a(stack_a, TRUE);
-
-	//common part
 	push_b(stack_a, stack_b);
 	sort_3els(stack_a);
 	push_a(stack_a, stack_b);
@@ -72,7 +72,7 @@ void	sort_4els(t_node **stack_a, t_node **stack_b)
 void	sort_5els(t_node **stack_a, t_node **stack_b)
 {
 	int	min_val;
-	
+
 	min_val = find_min_node(stack_a)->val;
 	if ((*stack_a)->next->val == min_val)
 		swap_a(stack_a, TRUE);

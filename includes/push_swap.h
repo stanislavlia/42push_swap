@@ -6,38 +6,37 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:17:52 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/06 15:30:05 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/06 17:17:28 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <limits.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <limits.h>
 
-#define TRUE 1
-#define FALSE 0
+# define TRUE 1
+# define FALSE 0
 
 typedef struct node
 {
-	int	curr_pos;
-	int	index;
-	int	val;
-	struct node *next;
-	struct node *prev;
-	struct node *target;
-	int	cost;
-	int	is_cheapest;
-	int	above_mid;
+	int			curr_pos;
+	int			index;
+	int			val;
+	struct node	*next;
+	struct node	*prev;
+	struct node	*target;
+	int			cost;
+	int			is_cheapest;
+	int			above_mid;
 }			t_node;
 
 typedef struct push_swap
 {
-	t_node *stack_a;
-	t_node *stack_b;
-	
+	t_node	*stack_a;
+	t_node	*stack_b;
 }			t_push_swap;
 
 //Utils
@@ -47,7 +46,7 @@ char	**ft_split(char const *s, char c);
 void	ft_putstr_fd(char *s, int fd);
 
 //Linkedlist utils
-t_node *find_last_node(t_node **head);
+t_node	*find_last_node(t_node **head);
 t_node	*init_stack(char **args);
 t_node	*init_stack_qts(char *args);
 int		get_stack_size(t_node **head);
@@ -81,15 +80,13 @@ void	set_cheapest(t_node **stack);
 void	update_stacks(t_node **stack_a, t_node **stack_b);
 t_node	*get_cheapest(t_node **stack);
 void	rotate_both_till(t_node **stack_a, t_node **stack_b,
-										t_node *cheapest_node);
+			t_node *cheapest_node);
 void	rev_rotate_both_till(t_node **stack_a, t_node **stack_b,
-										t_node *cheapest_node);
-//void	complete_rotation(t_node **stack, t_node *top_node, char stack_name);
+			t_node *cheapest_node);
 void	complete_rotation(t_node **stack_a, t_node **stack_b);
 void	general_sort(t_node **stack_a, t_node **stack_b);
 
-void	print_stack(t_node **head);
-void	print_stack_backward(t_node **head);
+//Error handling and parsing
 void	free_stack(t_node **head);
 void	update_prev_refs(t_node **stack);
 void	exit_with_err(t_node **stack);
@@ -97,6 +94,5 @@ int		is_space_inside(char *str);
 void	check_spaces(char **argv, t_node **head);
 void	check_dups(t_node **stack);
 void	free_matrix(char **argv);
-
 
 #endif

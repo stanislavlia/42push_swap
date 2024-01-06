@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 11:34:00 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/06 15:27:16 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/06 15:43:00 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void	update_stacks(t_node **stack_a, t_node **stack_b)
 }
 
 t_node	*get_cheapest(t_node **stack)
-{	
+{
 	t_node	*curr;
-	t_node *cheapest;
-	
+	t_node	*cheapest;
+
 	cheapest = NULL;
 	curr = *stack;
 	while (curr != NULL)
@@ -38,7 +38,6 @@ t_node	*get_cheapest(t_node **stack)
 	return (cheapest);
 }
 
-
 void	move_cheap_node(t_node **stack_a, t_node **stack_b)
 {
 	t_node	*cheapest;
@@ -48,7 +47,6 @@ void	move_cheap_node(t_node **stack_a, t_node **stack_b)
 		rotate_both_till(stack_a, stack_b, cheapest);
 	if (!(cheapest->above_mid) && !(cheapest->target->above_mid))
 		rev_rotate_both_till(stack_a, stack_b, cheapest);
-	//rotate_both_till(stack_a, stack_b, cheapest);
 	complete_rotation(stack_a, stack_b);
 	push_a(stack_a, stack_b);
 }
@@ -58,7 +56,7 @@ void	general_sort(t_node **stack_a, t_node **stack_b)
 {
 	t_node	*min_node_a;
 	int		size_a;
-	
+
 	size_a = get_stack_size(stack_a);
 	if (size_a <= 5)
 	{
@@ -68,8 +66,8 @@ void	general_sort(t_node **stack_a, t_node **stack_b)
 	while (get_stack_size(stack_a) > 3)
 		push_b(stack_a, stack_b);
 	sort_small(stack_a, stack_b);
-	while(get_stack_size(stack_b))
-	{	
+	while (get_stack_size(stack_b))
+	{
 		update_stacks(stack_a, stack_b);
 		move_cheap_node(stack_a, stack_b);
 	}

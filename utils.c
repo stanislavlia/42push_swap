@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:33:01 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/06 15:28:02 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/06 15:48:40 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,9 @@ int	error_syntax( char *str_nbr)
 	return (0);
 }
 
-
-
 int	ft_atoi_protected( char *str, t_node **head)
 {
-	int	i;
+	int		i;
 	long	res;
 	int		neg;
 
@@ -58,7 +56,7 @@ int	ft_atoi_protected( char *str, t_node **head)
 	}
 	if ((res * neg) > INT_MAX || (res * neg) < INT_MIN)
 		exit_with_err(head);
-	return (int)(res * neg);
+	return ((int)(res * neg));
 }
 
 void	ft_putchar_fd(char c, int fd)
@@ -81,7 +79,7 @@ void	ft_putstr_fd(char *s, int fd)
 int	get_stack_size(t_node **head)
 {
 	int			i;
-	t_node	*curr_node;
+	t_node		*curr_node;
 
 	curr_node = (*head);
 	i = 0;

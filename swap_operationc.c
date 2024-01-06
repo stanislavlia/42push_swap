@@ -6,17 +6,17 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:18:57 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/03 15:33:59 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/06 15:48:00 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"push_swap.h"
+#include "push_swap.h"
 
 void	swap_a(t_node **stack_a, int verbose)
 {
-	t_node *head;
-	t_node *temp_node;
-	
+	t_node	*head;
+	t_node	*temp_node;
+
 	head = *stack_a;
 	if (head->next == NULL)
 		return ;
@@ -34,9 +34,9 @@ void	swap_a(t_node **stack_a, int verbose)
 
 void	swap_b(t_node **stack_b, int verbose)
 {
-	t_node *head;
-	t_node *temp_node;
-	
+	t_node	*head;
+	t_node	*temp_node;
+
 	head = *stack_b;
 	if (head->next == NULL)
 		return ;
