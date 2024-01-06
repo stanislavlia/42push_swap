@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:17:52 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/06 12:12:40 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/06 12:46:24 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ typedef struct push_swap
 }			t_push_swap;
 
 //Utils
-int		ft_atoi(const char *str);
+// int		ft_atoi(const char *str);
+int		ft_atoi_protected(const char *str, t_node **head);
 char	**ft_split(char const *s, char c);
 void	ft_putstr_fd(char *s, int fd);
 

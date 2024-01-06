@@ -4,7 +4,7 @@ void free_stack(t_node **head)
 {
 	t_node *current_node;
 	t_node *next_node;
-
+	
 	if (head == NULL || *head == NULL)
 		return;
 	current_node = *head;
@@ -50,6 +50,7 @@ void	print_stack_backward(t_node **head)
 // 1) Try to comment my small algorithm and try to catch problem using big algorithm
 // 2) Try Xcode to debug and catch problem
 
+//DONT FORGET TO TURN ON THE FLAGS!!!
 //./push_swap 4 5 1 3 2 - Element 2 just disappears 
 int	main(int argc, char **argv)
 {
