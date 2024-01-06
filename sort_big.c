@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 11:34:00 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/05 18:54:51 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/06 12:10:12 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ void	move_cheap_node(t_node **stack_a, t_node **stack_b)
 	t_node	*cheapest;
 
 	cheapest = get_cheapest(stack_b);
-	// if (cheapest->above_mid && cheapest->target->above_mid)
-	// 	rotate_both_till(stack_a, stack_b, cheapest);
-	// if (!(cheapest->above_mid) && !(cheapest->target->above_mid))
-	// 	rev_rotate_both_till(stack_a, stack_b, cheapest);
-	rotate_both_till(stack_a, stack_b, cheapest);
+	if (cheapest->above_mid && cheapest->target->above_mid)
+		rotate_both_till(stack_a, stack_b, cheapest);
+	if (!(cheapest->above_mid) && !(cheapest->target->above_mid))
+		rev_rotate_both_till(stack_a, stack_b, cheapest);
+	//rotate_both_till(stack_a, stack_b, cheapest);
 	complete_rotation(stack_a, stack_b);
 	push_a(stack_a, stack_b);
 }
@@ -91,8 +91,6 @@ void	general_sort(t_node **stack_a, t_node **stack_b)
 	}
 	update_pos(stack_a);
 	min_node_a = find_min_node(stack_a);
-	// while (*stack_a != min_node_a)
-	// 	rotate_a(stack_a, TRUE);
 	if (min_node_a->above_mid)
 		while (*stack_a != min_node_a)
 			rotate_a(stack_a, TRUE);

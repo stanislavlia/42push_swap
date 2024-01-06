@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:13:30 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/05 18:52:04 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/06 12:11:48 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,19 +98,20 @@ void	complete_rotation(t_node **stack_a, t_node **stack_b)
 	lift_a = lift_b->target;
 	while ((*stack_a)->val != lift_a->val)
 	{
-		// if (lift_a->above_mid)
-		// 	rotate_a(stack_a, TRUE);
-		// else
-		// 	reverse_rotate_a(stack_a, TRUE);
-		rotate_a(stack_a, TRUE);
+		if (lift_a->above_mid)
+			rotate_a(stack_a, TRUE);
+		else
+			reverse_rotate_a(stack_a, TRUE);
+		//rotate_a(stack_a, TRUE);
+		
 	}
 	while ((*stack_b)->val != lift_b->val)
 	{
-		// if (lift_b->above_mid)
-		// 	rotate_b(stack_b, TRUE);
-		// else
-		// 	reverse_rotate_b(stack_b, TRUE);
-		rotate_b(stack_b, TRUE);
+		if (lift_b->above_mid)
+			rotate_b(stack_b, TRUE);
+		else
+			reverse_rotate_b(stack_b, TRUE);
+		//rotate_b(stack_b, TRUE);
 	}	
 }
 

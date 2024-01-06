@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	}
 	general_sort(&stack_a, &stack_b);
 
-	print_stack(&stack_a);
+	//print_stack(&stack_a);
 	
 	free_stack(&stack_a);
 	free_stack(&stack_b);
