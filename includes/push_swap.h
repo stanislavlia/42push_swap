@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:17:52 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/06 14:19:12 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/06 15:30:05 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
 #include <limits.h>
 
 #define TRUE 1

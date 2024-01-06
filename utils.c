@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:33:01 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/06 13:37:02 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/06 15:28:02 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,19 @@ void	ft_putstr_fd(char *s, int fd)
 		ft_putchar_fd(s[i], fd);
 		i++;
 	}
+}
+
+int	get_stack_size(t_node **head)
+{
+	int			i;
+	t_node	*curr_node;
+
+	curr_node = (*head);
+	i = 0;
+	while (curr_node != NULL)
+	{
+		i++;
+		curr_node = curr_node->next;
+	}
+	return (i);
 }

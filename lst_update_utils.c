@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 16:40:54 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/04 15:01:44 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/06 15:26:12 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	find_target_node(t_node **stack, t_node *node)
 void	set_targets(t_node **stack_a, t_node **stack_b)
 {
 	t_node	*curr;
-	
+
 	curr = *stack_b;
 	while (curr != NULL)
 	{
@@ -76,10 +76,10 @@ void	set_targets(t_node **stack_a, t_node **stack_b)
 //Setting cost for each element in B to move to A 
 void	set_costs(t_node **stack_a, t_node **stack_b)
 {
-	int	size_a;
-	int	size_b;
+	int		size_a;
+	int		size_b;
 	t_node	*curr;
-	
+
 	curr = *stack_b;
 	size_a = get_stack_size(stack_a);
 	size_b = get_stack_size(stack_b);

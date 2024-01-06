@@ -6,7 +6,7 @@
 /*   By: sliashko <sliashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:35:14 by sliashko          #+#    #+#             */
-/*   Updated: 2024/01/06 13:49:30 by sliashko         ###   ########.fr       */
+/*   Updated: 2024/01/06 15:25:24 by sliashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	check_spaces(char **argv, t_node **head)
 //runs over stack and look for nbr
 int	find_duplicate(t_node **stack, int nbr)
 {
-	int	count;
+	int		count;
 	t_node	*curr;
 
 	curr = *stack;
