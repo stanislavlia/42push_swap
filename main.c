@@ -4,7 +4,7 @@ void free_stack(t_node **head)
 {
 	t_node *current_node;
 	t_node *next_node;
-	
+
 	if (head == NULL || *head == NULL)
 		return;
 	current_node = *head;
@@ -62,8 +62,10 @@ int	main(int argc, char **argv)
 		printf("Too few args\n");
 		return (EXIT_FAILURE);
 	}
-	
 	stack_a = init_stack(argv + 1);
+
+	
+	
 	stack_b = NULL;
 	if (is_sorted(&stack_a))
 	{
